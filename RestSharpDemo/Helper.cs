@@ -39,6 +39,21 @@ namespace RestSharpDemo
             return request;
         }
 
+        public RestRequest CreatePutRequest(string payload)
+        {
+            request = new RestRequest(Method.PUT);
+            request.AddHeader("Accept", "application/json");
+            request.AddParameter("application/json",payload,ParameterType.RequestBody);
+            return request;
+        }
+
+        public RestRequest CreateDeleteRequest()
+        {
+            request = new RestRequest(Method.DELETE);
+            request.AddHeader("Accept", "application/json");
+            return request;
+        }
+
         public IRestResponse GetResponse(RestClient restClient, RestRequest restRequest)
         {
             return restClient.Execute(restRequest);
