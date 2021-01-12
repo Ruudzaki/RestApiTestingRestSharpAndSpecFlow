@@ -7,11 +7,11 @@ using RestSharpDemo.Models;
 
 namespace RestSharpDemo
 {
-    public class Demo
+    public class Api
     {
         private readonly Helper helper;
 
-        public Demo()
+        public Api()
         {
             helper = new Helper();
         }

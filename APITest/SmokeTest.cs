@@ -71,7 +71,7 @@ namespace APITest
             [TestMethod]
         public void GetListOfUsers()
         {
-            var api = new Demo();
+            var api = new Api();
             var response = api.GetUsers(BASE_URL);
             statusCode = response.StatusCode;
             var code = (int)statusCode;
@@ -88,14 +88,14 @@ namespace APITest
         {
             var payload = HandleContent.ParseJson<CreateUserRequest>("CreateUser.json");
 
-            var api = new Demo();
+            var api = new Api();
             var response = api.CreateNewUser(BASE_URL, payload);
             statusCode = response.StatusCode;
             var code = (int) statusCode;
             Assert.AreEqual(201,code);
             Reporter.LogToReport(Status.Pass, "201 response code is received");
 
-            var userContent = HandleContent.GetContent<CreateUserResponse>(response);
+            var userContent = HandleContent.GetContent<CreateUser>(response);
             Assert.AreEqual(payload.name, userContent.name);
         }
     }

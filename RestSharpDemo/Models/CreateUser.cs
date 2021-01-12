@@ -5,7 +5,7 @@ using System.Text;
 namespace RestSharpDemo.Models
 {
 
-    public class CreateUserResponse
+    public class CreateUser
     {
         public string name { get; set; }
         public string job { get; set; }
